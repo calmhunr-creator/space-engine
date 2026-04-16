@@ -421,8 +421,9 @@ class World:
         voxel_data = np.zeros(voxel_count, dtype=np.uint32)
         self.voxel_buffer = self.ctx.buffer(voxel_data.tobytes())
         
-        # Bind buffer to compute shader
-        self.compute_program['VoxelData'] = self.voxel_buffer
+        # Bind buffer to compute shader using storage buffer binding
+        self.voxel_buffer.bind_to_storage_buffer(0)
+        self.compute_program['VoxelData_binding'] = 0
         self.compute_program['chunk_size'] = CHUNK_SIZE
         self.compute_program['world_offset_x'] = chunk.position[0]
         self.compute_program['world_offset_y'] = chunk.position[1]

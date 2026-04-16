@@ -431,7 +431,7 @@ class World:
         
         # Run compute shader
         grid_size = ((CHUNK_SIZE + 7) // 8, (CHUNK_SIZE + 7) // 8, (CHUNK_SIZE + 7) // 8)
-        self.compute_program.run(grid_size=grid_size)
+        self.compute_program.run(group_size=grid_size)
         
         # Read back voxel data
         voxel_data = np.frombuffer(self.voxel_buffer.read(), dtype=np.uint32).reshape((CHUNK_SIZE, CHUNK_SIZE, CHUNK_SIZE))

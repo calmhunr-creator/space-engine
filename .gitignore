@@ -1,13 +1,17 @@
-```gitignore
-# Python
-__pycache__/
+```python
+# Compiled and build artifacts
 *.pyc
-*.pyo
-*.pyd
+__pycache__/
+
+# Dependencies
+.venv/
+venv/
+pip-tools/
 
 # Logs and temp files
 *.log
 *.tmp
+*.swp
 
 # Environment
 .env
@@ -18,17 +22,26 @@ __pycache__/
 .vscode/
 .idea/
 
-# Dependencies
-.venv/
-venv/
-node_modules/
+# Coverage
+.coverage
+coverage/
+htmlcov/
 
-# Build artifacts
+# Python specific
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg-info/
+.eggs/
+.mypy_cache/
+.pytest_cache/
+.tox/
+.hypothesis/
+
+# Build and distribution
 dist/
 build/
-target/
-
-# OS generated files
-.DS_Store
-Thumbs.db
+*.egg
+*.whl
 ```

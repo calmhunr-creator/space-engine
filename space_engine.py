@@ -423,7 +423,6 @@ class World:
         
         # Bind buffer to compute shader using storage buffer binding
         self.voxel_buffer.bind_to_storage_buffer(0)
-        self.compute_program['VoxelData_binding'] = 0
         self.compute_program['chunk_size'] = CHUNK_SIZE
         self.compute_program['world_offset_x'] = chunk.position[0]
         self.compute_program['world_offset_y'] = chunk.position[1]
